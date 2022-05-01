@@ -6,7 +6,12 @@
     "lerna": "^4.0.0"
   },
   "scripts": {
-    "start": "lerna exec --scope @leehankue/app -- yarn start"
+    "bootstrap": "lerna bootstrap --hoist",
+    "start": "lerna run start --stream",
+    "build": "lerna run build --stream",
+    "tsc": "lerna run tsc --stream",
+    "watch": "lerna run watch --stream",
+    "start:app": "lerna exec --scope @leehankue/app -- yarn start"
   },
   "workspaces": {
     "packages": [

@@ -6,6 +6,7 @@ function App() {
   const [state, setState] = React.useState(0);
   return (
     <div className="App">
+      test
       {state}
      <Button onClick={()=>setState(s=>++s)}>Click me2!</Button>
     </div>
