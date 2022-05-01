@@ -1,3 +1,9 @@
+```text
+node - v16.10.0
+npm - v7.24.0
+yarn - v1.22.18
+```
+
 # 1. lerna 설치 및 초기설정
 root 디렉토리를 만들고 package를 workspaces가 관리하도록 설정합니다.
 ```bash
