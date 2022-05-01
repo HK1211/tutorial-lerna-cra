@@ -36,9 +36,12 @@ lerna success Initialized Lerna files
 
 # 2. packages에 CRA로 components와 app 프로젝트 생성하기
 ```bash
-$ cd packages
+$ echo "node_modules" >> .gitignore && cd packages
 $ yarn create react-app components --template typescript
 $ yarn create react-app app --template typescript
+
+# 또는
+# $ echo "node_modules" >> .gitignore && cd packages && yarn create react-app components --template typescript && yarn create react-app app --template typescript
 ```
 
 # 3. craco 설치하기
