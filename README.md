@@ -4,10 +4,10 @@ npm - v7.24.0
 yarn - v1.22.18
 ```
 
-# 1. lerna 설치 및 초기설정
+# 1. lerna 초기화 및 craco 설치
 root 디렉토리를 만들고 package를 workspaces가 관리하도록 설정합니다.
 ```bash
-$ mkdir <워크스페이스명> && cd <워크스페이스명> && npx lerna init && code . && exit
+$ mkdir lerna-cra-hklee && cd lerna-cra-hklee && npx lerna init && yarn add --dev craco -W && code . && exit
 
 lerna notice cli v4.0.0
 lerna info Initializing Git repository
@@ -16,6 +16,7 @@ lerna info Creating lerna.json
 lerna info Creating packages directory
 lerna success Initialized Lerna files
 ```
+lerna 및 root package 기본 설정하기
 ```json
 # root/lerna.json
 {
@@ -42,21 +43,15 @@ lerna success Initialized Lerna files
 
 # 2. packages에 CRA로 components와 app 프로젝트 생성하기
 ```bash
-$ echo "node_modules" >> .gitignore && cd packages
-$ yarn create react-app components --template typescript
-$ yarn create react-app app --template typescript
+$ echo "node_modules" >> .gitignore && cd packages && yarn create react-app components --template typescript && yarn create react-app app --template typescript && cd ..
 
 # 또는
-# $ echo "node_modules" >> .gitignore && cd packages && yarn create react-app components --template typescript && yarn create react-app app --template typescript
+# $ echo "node_modules" >> .gitignore && cd packages
+# $ yarn create react-app components --template typescript
+# $ yarn create react-app app --template typescript
 ```
 
-# 3. craco 설치하기
-craco는 devDependencies 환경에서만 사용할 것이기 때문에 --dev 옵션을 주고,
--W가 workspaces에서 사용할 수 있도록 해줍니다.
-```bash
-$ yarn add --dev craco -W
-```
-# 4. packages의 각 package.json name 수정하기
+# 3. packages의 각 package.json name 수정하기
 ```json
 // root/packages/app/package.josn
 {
@@ -212,3 +207,7 @@ app > package.json > scripts 수정하기
 ```
 # 결과
 <img src="./readme/done.png">
+
+```bash
+$ mkdir lerna-cra-hklee && cd lerna-cra-hklee && npx lerna init && yarn add --dev craco -W && echo "node_modules" >> .gitignore && cd packages && yarn create react-app components --template typescript && yarn create react-app app --template typescript && cd .. && code . && exit
+```
