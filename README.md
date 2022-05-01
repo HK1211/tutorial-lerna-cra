@@ -1,7 +1,7 @@
 # 1. lerna 설치 및 초기설정
 root 디렉토리를 만들고 package를 workspaces가 관리하도록 설정합니다.
 ```bash
-& mkdir lerna-cra && cd lerna-cra && npx lerna init
+$ mkdir <워크스페이스명> && cd <워크스페이스명> && npx lerna init && code . && exit
 
 lerna notice cli v4.0.0
 lerna info Initializing Git repository
